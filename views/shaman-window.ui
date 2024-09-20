@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="shaman">
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkApplicationWindow" id="shaman-window">
+    <property name="title">Shaman</property>
+    <property name="default-width">300</property>
+    <property name="default-height">600</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header-bar">
+        <child type="start">
+          <object class="GtkMenuButton">
+            <property name="icon-name">open-menu-symbolic</property>
+            <property name="menu-model">primary-menu</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolled-window">
+      </object>
+    </child>
+  </object>
+  <menu id="primary-menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Start Monitoring</attribute>
+        <attribute name="action">app.start-monitoring</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Stop Monitoring</attribute>
+        <attribute name="action">app.stop-monitoring</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">About Shaman</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Quit</attribute>
+        <attribute name="action">app.quit</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
